@@ -8,6 +8,9 @@ import { TopBarComponent } from './top-bar/top-bar.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductAlertsComponent } from './product-alerts/product-alerts.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CartViewComponent } from './cart-view/cart-view.component';
+import { HttpClientModule} from '@angular/common/http';
+import { ShippingComponent } from './shipping/shipping.component'
 
 @NgModule({
   declarations: [
@@ -15,15 +18,20 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     TopBarComponent,
     ProductListComponent,
     ProductAlertsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    CartViewComponent,
+    ShippingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     RouterModule.forRoot([
       {path: '', component: ProductListComponent},
-      {path: 'productos/:productoId', component: ProductDetailsComponent}
+      {path: 'productos/:productoId', component: ProductDetailsComponent},
+      {path: 'cart', component: CartViewComponent},
+      {path:'shipping', component: ShippingComponent}
     ])
   ],
   providers: [],
