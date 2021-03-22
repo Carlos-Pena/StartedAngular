@@ -7,7 +7,7 @@ import {CartService} from '../cart.service'
   styleUrls: ['./shipping.component.css']
 })
 export class ShippingComponent implements OnInit {
-  public shippingCost;
+  public shippingCost:any;
   constructor(
     private cartService:CartService
   ) { }

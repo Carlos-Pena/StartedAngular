@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http'
-import { Observable } from 'rxjs';
+import { never, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CartService {
-  items = [];
+  items:Array<string> = []
 
-  addToCart(producto){
-    return this.items.push(producto)
+  addToCart(producto:any){
+    return this.items.push(producto )
   }
 
   getItems(){
